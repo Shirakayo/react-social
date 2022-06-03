@@ -1,0 +1,13 @@
+.nav {
+    background-color: darkgray;
+    grid-area: nav;
+}
+
+.item {
+    color: white;
+    text-decoration: none;
+}
+
+.action {
+    color: darkred;
+}
