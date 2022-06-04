@@ -1,4 +1,4 @@
-.wrapper {
+.app-wrapper {
     display: grid;
     grid-template-areas:
         "head head head"
@@ -7,4 +7,9 @@
     grid-template-rows: 60px 1fr;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.app-wrapper-content {
+    grid-area: content;
+    background-color: aliceblue;
 }

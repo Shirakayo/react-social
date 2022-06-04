@@ -1,11 +1,17 @@
 .nav {
     background-color: darkgray;
     grid-area: nav;
+    padding: 5px;
 }
 
 .item {
     color: white;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.item:hover {
+    text-decoration: underline;
 }
 
 .action {

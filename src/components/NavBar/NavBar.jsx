@@ -1,28 +1,22 @@
 import n from "./NavBar.module.css";
 
 const NavBar = () => {
-    console.log(n)
   return (
     <nav className={n.nav}>
       <div>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={`${n.item} ${n.action}`}>Profile</a>
+        <a href={'/profile'} className={n.item}>Profile</a>
       </div>
       <div>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={n.item}>Messages</a>
+        <a href={'/dialogs'} className={`${n.item} ${n.action}`}>Messages</a>
       </div>
       <div>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={n.item}>News</a>
+        <a href={'/news'} className={n.item}>News</a>
       </div>
       <div>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={n.item}>Music</a>
+        <a href={'/music'} className={n.item}>Music</a>
       </div>
       <div>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={n.item}>Settings</a>
+        <a href={'/settings'} className={n.item}>Settings</a>
       </div>
     </nav>
   );

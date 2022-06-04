@@ -6,13 +6,11 @@ const MyPosts = () => {
         <div className={main.info}>
             My posts
             <div>
-                New post
+                <textarea></textarea> <button>New post</button>
             </div>
             <div>
-                <Post set={`It's work!`}/>
-                <Post set={`It's work again!`}/>
-                <Post setup={`This is post!`}/>
-                <Post setup={`This is post again!`}/>
+                <Post message={`It's work!`} likesCount = '23' />
+                <Post message={`It's work again!`} likesCount = '0'/>
             </div>
         </div>
     )
