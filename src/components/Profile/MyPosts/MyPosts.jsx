@@ -1,19 +1,23 @@
-import main from "./MyPosts.module.css"
-import Post from "./Post/Post";
+import main from "./MyPosts.module.css";
 
-const MyPosts = () => {
-    return (
-        <div className={main.info}>
-            My posts
-            <div>
-                <textarea></textarea> <button>New post</button>
-            </div>
-            <div>
-                <Post message={`It's work!`} likesCount = '23' />
-                <Post message={`It's work again!`} likesCount = '0'/>
-            </div>
+
+const MyPosts = (props) => {
+    debugger
+  return (
+    <div className={main.info}>
+      My posts
+      <div className={main.newPost}>
+        <textarea className={main.area}></textarea>
+        <div>
+          <button>New post</button>
         </div>
-    )
-}
+      </div>
+      <div>
 
-export default MyPosts
+          { props.posts }
+      </div>
+    </div>
+  );
+};
+
+export default MyPosts;

@@ -1,0 +1,14 @@
+.dialog {
+    color: #1E1F26;
+    margin-bottom: 10px;
+
+}
+
+.dialog_item {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    color: darkred;
+}

@@ -1,11 +1,14 @@
-// import assets from './Dialogs.module.css'
+import assets from "./Dialogs.module.css";
 
-const Dialogs = () => {
-    return (
-        <div>
-            Dialogs
-        </div>
-    )
-}
+// import React from "@types/react";
 
-export default Dialogs
+const Dialogs = (props) => {
+  return (
+    <div className={assets.dialogs}>
+      <div className={assets.dialogs_item}>{props.dialogs}</div>
+      <div className={assets.messages}>{props.messages}</div>
+    </div>
+  );
+};
+
+export default Dialogs;

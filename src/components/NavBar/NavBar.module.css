@@ -1,7 +1,7 @@
 .nav {
-    background-color: darkgray;
+    background-color: #1e1f26;
     grid-area: nav;
-    padding: 5px;
+    padding: 10px;
 }
 
 .item {
@@ -10,10 +10,11 @@
     cursor: pointer;
 }
 
-.item:hover {
-    text-decoration: underline;
-}
+/*.item:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
 
-.action {
+.active {
     color: darkred;
+    text-decoration: none;
 }

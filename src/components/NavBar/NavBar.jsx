@@ -1,25 +1,51 @@
 import n from "./NavBar.module.css";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav className={n.nav}>
       <div>
-        <a href={'/profile'} className={n.item}>Profile</a>
+        <NavLink
+          to={"/profile"}
+          className={(navData) => (navData.isActive ? n.active : n.item)}
+        >
+          Profile
+        </NavLink>
       </div>
       <div>
-        <a href={'/dialogs'} className={`${n.item} ${n.action}`}>Messages</a>
+        <NavLink
+          to={"/dialogs"}
+          className={(navData) => (navData.isActive ? n.active : n.item)}
+        >
+          Messages
+        </NavLink>
       </div>
       <div>
-        <a href={'/news'} className={n.item}>News</a>
+        <NavLink
+          to={"/news"}
+          className={(navData) => (navData.isActive ? n.active : n.item)}
+        >
+          News
+        </NavLink>
       </div>
       <div>
-        <a href={'/music'} className={n.item}>Music</a>
+        <NavLink
+          to={"/music"}
+          className={(navData) => (navData.isActive ? n.active : n.item)}
+        >
+          Music
+        </NavLink>
       </div>
       <div>
-        <a href={'/settings'} className={n.item}>Settings</a>
+        <NavLink
+          to={"/settings"}
+          className={(navData) => (navData.isActive ? n.active : n.item)}
+        >
+          Settings
+        </NavLink>
       </div>
     </nav>
   );
 };
 
-export default NavBar
+export default NavBar;

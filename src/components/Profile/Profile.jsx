@@ -3,12 +3,12 @@ import Background from "./Background/Background";
 import MyInfo from "./MyInfo/MyInfo"
 import MyPosts from "./MyPosts/MyPosts";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div>
             <Background />
             <MyInfo />
-            <MyPosts />
+            <MyPosts posts={props.posts}/>
         </div>
     )
 }
