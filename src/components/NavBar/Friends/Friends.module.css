@@ -1,0 +1,13 @@
+.friend_image {
+    max-width: 30px;
+    border-radius: 50%;
+}
+
+.friends_wrapper {
+    display: flex;
+}
+
+.friends_title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}

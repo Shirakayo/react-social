@@ -4,9 +4,15 @@
 
 }
 
+.dialogs_image {
+    max-width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 .dialog_item {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .active {

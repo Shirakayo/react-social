@@ -4,6 +4,10 @@
     padding: 10px;
 }
 
+.friends {
+    padding-top: 50px;
+}
+
 .item {
     color: white;
     text-decoration: none;
@@ -14,7 +18,14 @@
 /*    text-decoration: underline;*/
 /*}*/
 
+.friends {
+    color: white;
+    text-decoration: none;
+
+}
+
 .active {
     color: darkred;
     text-decoration: none;
 }
+
