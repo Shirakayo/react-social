@@ -1,5 +1,4 @@
 .info {
-    /*background-color: gray;*/
     padding: 10px 0 0 10px;
     margin-bottom: 10px;
     color: white;
@@ -11,4 +10,25 @@
 
 .area {
     margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.button {
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: sans-serif;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #DBD6D6FF;
 }

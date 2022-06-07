@@ -7,7 +7,8 @@ const MyInfo = () => {
                 <img src="https://aniyuki.com/wp-content/uploads/2022/03/aniyuki-anime-girl-avatar-51.jpg" alt=""/>
             </div>
             <div>
-                Info about profile
+                <div className={card.title}>Andrey Pugachev</div>
+                <div className={card.subtitle}>Junior Frontend Developer</div>
             </div>
         </section>
     )

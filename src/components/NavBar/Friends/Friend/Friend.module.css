@@ -9,3 +9,8 @@
     align-items: center;
     padding: 5px;
 }
+
+.friend_links {
+    text-decoration: none;
+    color: #FFFFFF;
+}

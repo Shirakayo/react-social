@@ -1,7 +1,8 @@
 .dialog {
+    display: flex;
+    align-items: center;
     color: #1E1F26;
     margin-bottom: 10px;
-
 }
 
 .dialogs_image {
