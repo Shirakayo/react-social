@@ -10,6 +10,7 @@ const MyPosts = (props) => {
   let newPostElement = useRef();
 
   let newAlert = () => {
+    debugger
     props.addPost();
   };
 

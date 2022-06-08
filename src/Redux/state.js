@@ -1,61 +1,66 @@
-let rerenderEntireTree = () => {
-
-}
-
-let state = {
-    profilePage: {
-        posts: [
-            {id: 1, message: "It's work!", likesCount: 11},
-            {id: 2, message: "It's work again!", likesCount: 14},
-            {id: 3, message: "It's work again 111!", likesCount: 19},
-            {id: 4, message: "It's work again 2222!", likesCount: 13},
-        ],
-        newPostText: 'Shirakayo is best!'
+let store = {
+    _state: {
+        profilePage: {
+            posts: [
+                {id: 1, message: "It's work!", likesCount: 11},
+                {id: 2, message: "It's work again!", likesCount: 14},
+                {id: 3, message: "It's work again 111!", likesCount: 19},
+                {id: 4, message: "It's work again 2222!", likesCount: 13},
+            ],
+            newPostText: 'Shirakayo is best!'
+        },
+        dialogsPage: {
+            dialogs: [
+                {id: 1, name: "Andrey"},
+                {id: 2, name: "Sergey"},
+                {id: 3, name: "Sasha"},
+                {id: 4, name: "Valera"},
+                {id: 5, name: "Viktor"},
+                {id: 6, name: "Evgeniy"},
+                {id: 7, name: "Katusha"},
+            ],
+            message: [
+                {id: 1, message: "Hello"},
+                {id: 2, message: "Hi"},
+                {id: 3, message: "How are you?"},
+            ]
+        },
+        sideBar: {
+            friend: [
+                {id: 1, name: 'Alexey'},
+                {id: 2, name: 'Andrey'},
+                {id: 3, name: 'Sergey'},
+            ]
+        }
     },
-    dialogsPage: {
-        dialogs: [
-            {id: 1, name: "Andrey"},
-            {id: 2, name: "Sergey"},
-            {id: 3, name: "Sasha"},
-            {id: 4, name: "Valera"},
-            {id: 5, name: "Viktor"},
-            {id: 6, name: "Evgeniy"},
-            {id: 7, name: "Katusha"},
-        ],
-        message: [
-            {id: 1, message: "Hello"},
-            {id: 2, message: "Hi"},
-            {id: 3, message: "How are you?"},
-        ]
+    _rerenderPage() {
     },
-    sideBar: {
-        friend: [
-            {id: 1, name: 'Alexey'},
-            {id: 2, name: 'Andrey'},
-            {id: 3, name: 'Sergey'},
-        ]
+    getState () {
+        return this._state
+    },
+    addPost() {
+        debugger
+        let newPost = {
+            id: 5,
+            message: this._state.profilePage.newPostText,
+            likesCount: 0
+        };
+        this._state.profilePage.posts.push(newPost)
+        this._state.profilePage.newPostText = '';
+        this._rerenderPage(this._state)
+    },
+    reloadPost(postText) {
+        this._state.profilePage.newPostText = postText
+        this._rerenderPage(this._state)
+    },
+    reloadPage(observer) {
+        this._rerenderPage = observer
+    },
+    dispatch(action) {
+
     }
 }
 
-export const addPost = () => {
-    let newPost = {
-        id: 5,
-        message: state.profilePage.newPostText,
-        likesCount: 0
-    };
-    state.profilePage.posts.push(newPost)
-    state.profilePage.newPostText = '';
-    rerenderEntireTree(state)
-}
 
-export const reloadPost = (postText) => {
-    state.profilePage.newPostText = postText
-    rerenderEntireTree(state)
-}
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer
-}
-
-export default state
+export default store
 
