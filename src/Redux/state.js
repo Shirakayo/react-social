@@ -1,3 +1,13 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
+const ADD_POST = 'ADD-POST';
+const reloadPostChangeAction = 'RELOAD-POST';
+const addMessageOnDialogs = 'ADD-MESSAGE';
+const onMessageAction = 'RELOAD-MESSAGE';
+
+
 let store = {
     _state: {
         profilePage: {
@@ -7,7 +17,7 @@ let store = {
                 {id: 3, message: "It's work again 111!", likesCount: 19},
                 {id: 4, message: "It's work again 2222!", likesCount: 13},
             ],
-            newPostText: 'Shirakayo is best!'
+            newPostText: ''
         },
         dialogsPage: {
             dialogs: [
@@ -23,43 +33,38 @@ let store = {
                 {id: 1, message: "Hello"},
                 {id: 2, message: "Hi"},
                 {id: 3, message: "How are you?"},
-            ]
+            ],
+            newMessageText: ''
         },
         sideBar: {
             friend: [
                 {id: 1, name: 'Alexey'},
                 {id: 2, name: 'Andrey'},
                 {id: 3, name: 'Sergey'},
-            ]
+            ],
+
         }
     },
     _rerenderPage() {
     },
-    getState () {
+    getState() {
         return this._state
-    },
-    addPost() {
-        debugger
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likesCount: 0
-        };
-        this._state.profilePage.posts.push(newPost)
-        this._state.profilePage.newPostText = '';
-        this._rerenderPage(this._state)
-    },
-    reloadPost(postText) {
-        this._state.profilePage.newPostText = postText
-        this._rerenderPage(this._state)
     },
     reloadPage(observer) {
         this._rerenderPage = observer
     },
     dispatch(action) {
-
-    }
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._state.sideBar = sidebarReducer(this._state.sideBar, action)
+        this._rerenderPage(this._state)
+        }
 }
+
+export const addPostActionCreator = () =>  ({type: ADD_POST})
+export const addMessage = () =>  ({type: addMessageOnDialogs})
+export const onPostChangeAction = (text) => ({ type: reloadPostChangeAction, message: text})
+export const onMessageChangeAction = (text) => ({ type: onMessageAction, message: text})
 
 
 export default store
