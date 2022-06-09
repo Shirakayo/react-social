@@ -1,6 +1,6 @@
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
-import sidebarReducer from "./sidebar-reducer";
+
 
 const ADD_POST = 'ADD-POST';
 const reloadPostChangeAction = 'RELOAD-POST';
@@ -56,7 +56,6 @@ let store = {
     dispatch(action) {
         this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
-        this._state.sideBar = sidebarReducer(this._state.sideBar, action)
         this._rerenderPage(this._state)
         }
 }
