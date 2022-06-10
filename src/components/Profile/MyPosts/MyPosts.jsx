@@ -1,7 +1,7 @@
 import main from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import { useRef } from "react";
-import {addPostActionCreator, onPostChangeAction} from "../../../Redux/state";
+import {addPostActionCreator, onPostChangeAction} from "../../../Redux/store";
 
 
 const MyPosts = (props) => {

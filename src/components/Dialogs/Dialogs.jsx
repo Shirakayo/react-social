@@ -2,7 +2,7 @@ import assets from "./Dialogs.module.css";
 import Message from "./Messages/Message";
 import Dialog from "./Dialog/Dialog";
 import {useRef} from "react";
-import {addMessage, onMessageChangeAction} from "../../Redux/state";
+import {addMessage, onMessageChangeAction} from "../../Redux/store";
 
 // import React from "@types/react";
 

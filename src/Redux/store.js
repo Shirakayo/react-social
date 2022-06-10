@@ -41,6 +41,7 @@ let store = {
                 {id: 1, name: 'Alexey'},
                 {id: 2, name: 'Andrey'},
                 {id: 3, name: 'Sergey'},
+                {id: 3, name: 'Sergey'},
             ],
 
         }
@@ -50,7 +51,7 @@ let store = {
     getState() {
         return this._state
     },
-    reloadPage(observer) {
+    subscribe(observer) {
         this._rerenderPage = observer
     },
     dispatch(action) {
