@@ -1,23 +1,24 @@
 import main from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import { useRef } from "react";
-import {addPostActionCreator, onPostChangeAction} from "../../../Redux/store";
+
+
 
 
 const MyPosts = (props) => {
-  let postsElements = props.posts.map((p) => (
+  let postsElements = props.post.map((p) => (
     <Post message={p.message} likesCount={p.likesCount} id={p.id} />
   ));
 
   let newPostElement = useRef();
 
-  let newAlert = () => {
-    props.dispatch(addPostActionCreator());
+  let onAddPost = () => {
+    props.addPost();
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.dispatch(onPostChangeAction(text));
+    props.updateNewPostText(text)
   };
 
   return (
@@ -31,7 +32,7 @@ const MyPosts = (props) => {
           value={props.newPostText}
         />
         <div>
-          <button onClick={newAlert} className={main.button}>
+          <button onClick={onAddPost} className={main.button}>
             New post
           </button>
         </div>

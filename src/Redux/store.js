@@ -2,10 +2,6 @@ import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
 
 
-const ADD_POST = 'ADD-POST';
-const reloadPostChangeAction = 'RELOAD-POST';
-const addMessageOnDialogs = 'ADD-MESSAGE';
-const onMessageAction = 'RELOAD-MESSAGE';
 
 
 let store = {
@@ -61,10 +57,10 @@ let store = {
         }
 }
 
-export const addPostActionCreator = () =>  ({type: ADD_POST})
-export const addMessage = () =>  ({type: addMessageOnDialogs})
-export const onPostChangeAction = (text) => ({ type: reloadPostChangeAction, message: text})
-export const onMessageChangeAction = (text) => ({ type: onMessageAction, message: text})
+// export const addPostActionCreator = () =>  ({type: ADD_POST})
+// export const addMessage = () =>  ({type: addMessageOnDialogs})
+// export const onPostChangeAction = (text) => ({ type: reloadPostChangeAction, message: text})
+// export const onMessageChangeAction = (text) => ({ type: onMessageAction, message: text})
 
 
 export default store
