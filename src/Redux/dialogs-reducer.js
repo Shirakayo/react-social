@@ -20,18 +20,23 @@ let initialState = {
 }
 
 const dialogsReducer = (state = initialState, action) => {
-    if (action.type === addMessageOnDialogs) {
-        let newMessage = {
-            id: 4,
-            message: state.newMessageText
+    switch (action.type) {
+        case addMessageOnDialogs: {
+            return {
+                ...state,
+                message: [...state.message, {id: 4, message: state.newMessageText}],
+                newMessageText: ''
+            }
         }
-        state.message.push(newMessage)
-        state.newMessageText = ''
-    } else if (action.type === onMessageAction) {
-        state.newMessageText = action.message
+        case onMessageAction: {
+            return {
+                ...state,
+                newMessageText: action.message
+            }
+        }
+        default:
+            return state
     }
-
-    return state;
 }
 
 export const onMessageChangeAction = (text) => ({ type: onMessageAction, message: text})

@@ -8,7 +8,7 @@ const MyInfo = () => {
             </div>
             <div>
                 <div className={card.title}>Andrey Pugachev</div>
-                <div className={card.subtitle}>Junior Frontend Developer</div>
+                <div className={card.subtitle}>Middle Frontend Developer</div>
             </div>
         </section>
     )

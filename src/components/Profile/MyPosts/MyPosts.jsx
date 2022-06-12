@@ -7,7 +7,7 @@ import { useRef } from "react";
 
 const MyPosts = (props) => {
   let postsElements = props.post.map((p) => (
-    <Post message={p.message} likesCount={p.likesCount} id={p.id} />
+    <Post key={p.id} message={p.message} likesCount={p.likesCount} id={p.id} />
   ));
 
   let newPostElement = useRef();
@@ -18,7 +18,7 @@ const MyPosts = (props) => {
 
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPostText(text)
+    props.onPostChange(text)
   };
 
   return (

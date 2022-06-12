@@ -3,12 +3,12 @@ import Background from "./Background/Background";
 import MyInfo from "./MyInfo/MyInfo"
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
-const Profile = (props) => {
+const Profile = () => {
     return (
         <div>
             <Background/>
             <MyInfo/>
-            <MyPostsContainer store={props.store}/>
+            <MyPostsContainer />
         </div>
     )
 }

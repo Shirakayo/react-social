@@ -13,18 +13,23 @@ let initialState = {
 }
 
 const profileReducer = (state = initialState,action) => {
-    if (action.type === ADD_POST) {
-        let newPost = {
-            id: 5,
-            message: state.newPostText,
-            likesCount: 0
-        };
-        state.posts.push(newPost)
-        state.newPostText = '';
-    } else if (action.type === reloadPostChangeAction) {
-        state.newPostText = action.message
+    switch (action.type) {
+        case ADD_POST: {
+            return {
+                ...state,
+                posts: [...state.posts, {id: 5, message: state.newPostText, likesCount: 0}],
+                newPostText: ''
+            }
+        }
+        case reloadPostChangeAction: {
+            return {
+                ...state,
+                newPostText: action.message
+            }
+        }
+        default:
+            return state
     }
-    return state;
 }
 
 export const addPostActionCreator = () =>  ({type: ADD_POST})
