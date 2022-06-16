@@ -17,3 +17,16 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.selected:not(:last-child) {
+    margin-right: 5px;
+}
+
+.selected {
+    padding: 5px;
+    color: white;
+}
+
+.active {
+    color: darkred;
+}
