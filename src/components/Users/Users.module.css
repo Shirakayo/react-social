@@ -1,6 +1,6 @@
 .main {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding: 10px;
     gap: 10px;
     color: #FFFFFF;
@@ -28,5 +28,21 @@
 }
 
 .active {
-    color: darkred;
+    color: rgb(190, 23, 110);
+    font-weight: 800;
+}
+
+.pages {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+.pages span {
+    cursor: pointer;
+}
+
+.pages span:not(:last-child) {
+    margin-right: 5px;
 }
