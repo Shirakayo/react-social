@@ -1,11 +1,10 @@
-import card from "./MyInfo.module.css"
+import card from "./ProfileInfo.module.css"
 import Preloader from "../../common/Preloader/Preloader";
 
-const MyInfo = (props) => {
+const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader />
     }
-
     return (
         <section className={card.info}>
             <div className={card.avatar_img}>
@@ -19,4 +18,4 @@ const MyInfo = (props) => {
     )
 }
 
-export default MyInfo
+export default ProfileInfo
